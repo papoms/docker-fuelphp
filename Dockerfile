@@ -17,6 +17,11 @@ ADD ./supervisord.conf /etc/supervisord.conf
 RUN chmod 755 /start.sh
 RUN chmod 755 /etc/apache2/foreground.sh
 
+#Install fuel
+RUN cd /var/www/ ; git clone --recursive git://github.com/fuel/fuel.git ; cd fuel/ ; php composer.phar self-update ; php composer.phar update ; php oil refine install
+ADD ./fuel-vhost /etc/apache2/sites-available/fuel
+RUN a2ensite fuel ; a2dissite default ; service apache2 reload
+
 # Setup Port and Start CMD
 EXPOSE 80
 CMD ["/bin/bash", "/start.sh"]

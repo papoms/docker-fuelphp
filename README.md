@@ -5,20 +5,16 @@ dial unix /var/run/docker.sock: permission denied
 when you run the below commands, simply use sudo. This is a [known issue](https://twitter.com/docker/status/366040073793323008).)
 
 
-This repo contains a recipe for making a [Docker](http://docker.io) container, with Apache, MySQL and PHP.
+This repo contains a recipe for making a [Docker](http://docker.io) container, with Apache, MySQL, PHP and Fuelphp preinstalled.
 To build, make sure you have Docker [installed](http://www.docker.io/gettingstarted/), clone this repo somewhere, and then run:
-```
-docker build -t <yourname>/lampstack .
-```
 
-Or, alternately, build DIRECTLY from the github repo like some sort of SUPER FUTURISTIC FLYING CAR MECHANIC:
 ```
-docker build -t <yourname>/lampstack git://github.com/jbfink/docker-lampstack.git
+docker build -t <yourname>/fuelphp .
 ```
 
 Then run it! Woo! 
 ```
-docker run -d -p 80 <yourname>/lampstack
+docker run -d -p 80 <yourname>/fuelphp
 ```
 
 
