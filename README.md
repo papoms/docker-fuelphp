@@ -18,7 +18,7 @@ docker build -t <yourname>/lampstack git://github.com/jbfink/docker-lampstack.gi
 
 Then run it! Woo! 
 ```
-docker run -d <yourname>/lampstack
+docker run -d -p 80 <yourname>/lampstack
 ```
 
 
